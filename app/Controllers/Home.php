@@ -14,14 +14,10 @@ class Home extends BaseController
 
     public function homeDashboard(): string
     {
-        if($this->session->get('level') != '2') {
-            return redirect()->to('/login');
-        }
 
         $data = [
             'judul' => 'Home',
             'page' => 'v_home',
-            'username' => $this->session->get('username')
         ];   
         return view('v_template_front_end', $data);
     }
